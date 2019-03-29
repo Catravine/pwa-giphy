@@ -1,3 +1,9 @@
+// Progressive Enhancement
+if (navigator.serviceWorker) {
+    // Register WS
+    navigator.serviceWorker.register('sw.js').catch(console.error);
+}
+
 
 // Giphy API object
 var giphy = {
@@ -37,7 +43,7 @@ function update() {
 
         // Failure
         .fail(function(){
-            
+
             $('.alert').slideDown();
             setTimeout( function() { $('.alert').slideUp() }, 2000);
         })
